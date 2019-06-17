@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>component-1</title>
+</head>
+<body>
+<h1>component-1</h1>
+<hr>
+<div id="app">
+    <demo></demo>
+    <demo2></demo2>
+</div>
+<div id="app2">
+
+    <demo></demo>
+    <demo2></demo2>
+</div>
+<script type="text/javascript" src="../assets/js/vue.js"></script>
+<script type="text/javascript">
+    Vue.component('demo',{
+        template:'<div style="color:red;">全局化注册的demo标签</div>'
+    })
+    var app=new Vue({
+        el:'#app',
+        data:{},
+        components:{
+            'demo2':{
+                template: '<div style="color:red;">局部注册的demo2标签</div>'
+            }
+        }
+    })
+    var app=new Vue({
+        el:'#app2',
+        data:{}
+    })
+</script>
+
+</body>
+</html>
