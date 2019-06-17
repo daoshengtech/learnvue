@@ -2,14 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Vue.js  demo</title>
+    <title>myVue</title>
+    <script type="text/javascript" src="/assets/js/vue.js"></script>
 </head>
 <body>
-    <h1>Vue2.0 Demo</h1>
-    <hr>
-    <ol>
-        <li><a href="example/helloworld.html">Hello World Vue</a></li>
-    </ol>
-   
+    <div id="app">
+        <div v-for="item in routeConfig">
+            <h2>{{ item.title }}</h2><hr>
+            <ol>
+                <li v-for="m in item.menu"><a v-bind:href="m.url">{{m.name}}</a></li>
+            </ol>
+        </div>
+        
+    </div>
+   <script type="module">
+        import {routeConfig} from "/lib.js";
+        new Vue({
+            el:"#app",
+            data:{
+                routeConfig:routeConfig
+            }
+        })     
+   </script>
 </body>
 </html>

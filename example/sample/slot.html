@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <script type="text/javascript" src="/assets/js/vue.js"></script>
+</head>
+<body>
+    <hr>
+     <div id="app">
+        <fghtmp >
+            <span slot="name">{{fgh.name}}</span>
+        </fghtmp>
+    </div>
+    <template id="tmp">
+        <div>
+            <p>姓名：<slot name="name"></slot></p>
+        </div>
+        
+    </template>
+    <script type="text/javascript">
+        var fghtmp = {
+            template:"#tmp"
+        }
+        var app = new Vue({
+            el: '#app',
+            data: {
+                fgh:{
+                    name:"fgh"
+                }
+            },
+            components:{
+                "fghtmp":fghtmp
+            }
+        })
+    </script>
+</body>
+</html>

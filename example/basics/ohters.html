@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>myVue</title>
+    <script type="text/javascript" src="/assets/js/vue.js"></script>
+    <style>
+        .classA{
+            color: brown;
+        }
+        .classB{
+            font-size: 150%;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div v-pre>{{msg}}</div>
+        <div v-cloak>渲染完后进行</div>
+        <div v-once>{{msg}}</div>
+        <div>
+            <input type="text" v-model="msg">
+        </div>
+        <div>{{msg}}</div>
+    </div>
+   <script>
+        new Vue({
+            el:"#app",
+            data:{
+                msg:"hello"
+            },
+        })     
+   </script>
+</body>
+</html>

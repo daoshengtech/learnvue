@@ -9,15 +9,23 @@
     <h1>Hello World</h1>
     <hr>
      <div id="app">
-        {{message}}
+        <ul>
+            <li v-for="(item, index) in arr">{{item}}</li>
+        </ul>
+        <button onclick="add()">add</button>
     </div>
 
     <script type="text/javascript">
+        function add(){
+            Vue.set(app.arr,1,'ddd')
+        }
+        var outData = {
+            count:1,
+            arr:["aa","bbb","ccc"]
+        }
         var app = new Vue({
             el: '#app',
-            data: {
-                message: 'Hello World Vue!'
-            }
+            data: outData
         })
     </script>
 </body>

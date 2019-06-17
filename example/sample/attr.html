@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Hello World</title>
     <script type="text/javascript" src="/assets/js/vue.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery-3.4.1.min.js"></script>
 </head>
 <body>
     <h1>Hello World</h1>
@@ -17,8 +18,17 @@
             el: '#app',
             data: {
                 message: 'Hello World Vue!'
+            },
+            mounted() {
+                $("#app").html("jquery")
+            },
+            methods:{
+                add:function(){
+                    console.log("sdf")
+                }
             }
         })
+        app.add();
     </script>
 </body>
 </html>

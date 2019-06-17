@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <script type="text/javascript" src="/assets/js/vue.js"></script>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <hr>
+     <div id="app">
+        <fgh address="henan" address-desc="zhoukou"></fgh>
+        <fgh2 :msg="message"></fgh2>
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello World Vue!'
+            },
+            components:{
+                "fgh":{
+                    template:`<div>fgh from {{address}}-{{addressDesc}}</div>`,
+                    props:["address","addressDesc",]
+                },
+                "fgh2":{
+                    template:`<div>s你说的啥？{{msg}}</div>`,
+                    props:["msg"]
+                }
+            }
+        })
+    </script>
+</body>
+</html>

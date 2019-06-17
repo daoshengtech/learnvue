@@ -9,16 +9,29 @@
     <h1>Hello World</h1>
     <hr>
      <div id="app">
-        {{message}}
     </div>
 
+    <header></header>
+
     <script type="text/javascript">
+        
+        var header_a = Vue.extend({
+            template:`<p>{{msg}}--{{a}}</p>`,
+            data:function(){
+                return {
+                    msg:"6666"
+                }
+            },
+            props:["a"]
+        })
+        new header_a({propsData:{a:1}}).$mount("header");
         var app = new Vue({
             el: '#app',
             data: {
                 message: 'Hello World Vue!'
             }
         })
+
     </script>
 </body>
 </html>

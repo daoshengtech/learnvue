@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>myVue</title>
+    <script type="text/javascript" src="/assets/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="item in sortTtems">{{item}}</li>
+        </ul>
+        <br/>
+        <ul>
+            <li v-for="s in students">姓名:{{s.name}},年龄:{{s.age}}</li>
+        </ul>
+    </div>
+   <script>
+        new Vue({
+            el:"#app",
+            data:{
+                items:[20,23,18,65,32],
+                students:[
+                    {name:"王二",age:12},
+                    {name:"李四",age:13}
+                ]
+            },
+            computed: {
+                sortTtems:function(){
+                    return this.items.sort(sortNumber);
+                }
+            },
+        })
+        function sortNumber(a,b){
+            return a-b
+        }     
+   </script>
+</body>
+</html>

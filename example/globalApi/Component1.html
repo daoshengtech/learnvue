@@ -9,15 +9,25 @@
     <h1>Hello World</h1>
     <hr>
      <div id="app">
-        {{message}}
+        <fgh></fgh>
+        <fgh2></fgh2>
     </div>
 
     <script type="text/javascript">
+        Vue.component("fgh",{
+            template:`<div style="color:red">全局注册</div>`
+        })
         var app = new Vue({
             el: '#app',
+            components:{
+                "fgh2":{
+                    template:`<div style="color:red;">局部注册</div>`
+                }
+            },
             data: {
                 message: 'Hello World Vue!'
-            }
+            },
+            
         })
     </script>
 </body>

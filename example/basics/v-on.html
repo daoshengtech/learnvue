@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>myVue</title>
+    <script type="text/javascript" src="/assets/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>分数:{{score}}</p>
+        <p>
+            <button @click="handleScore(0)">加分</button>
+            <button @click="handleScore(1)">减分</button>
+        </p>
+        <p>
+            <input type="text" v-on:keyup.enter="onEnter" v-model="score2">
+        </p>
+    </div>
+   <script>
+        new Vue({
+            el:"#app",
+            data:{
+                score:0,
+                score2:0,
+            },
+            methods:{
+                handleScore:function(active){
+                    if(active == 0){
+                        this.score ++;
+                    }
+                    else if(active == 1){
+                        this.score --;
+                    }
+                },
+                onEnter:function(){
+                    this.score = this.score + parseInt(this.score2)
+                }
+                
+            }
+        })     
+   </script>
+</body>
+</html>

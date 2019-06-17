@@ -9,15 +9,27 @@
     <h1>Hello World</h1>
     <hr>
      <div id="app">
-        {{message}}
+        <p>{{num}}</p>
+        <p><button @click="add">add</button></p>
     </div>
 
     <script type="text/javascript">
+        var addlog = {
+            updated() {
+                console.log(this.num)
+            },
+        }
         var app = new Vue({
             el: '#app',
             data: {
-                message: 'Hello World Vue!'
-            }
+                num:2
+            },
+            methods: {
+                add:function(){
+                    this.num ++;
+                }
+            },
+            mixins:[addlog]
         })
     </script>
 </body>

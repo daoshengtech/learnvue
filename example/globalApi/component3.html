@@ -9,14 +9,26 @@
     <h1>Hello World</h1>
     <hr>
      <div id="app">
-        {{message}}
+        <fgh></fgh>
     </div>
 
     <script type="text/javascript">
+        var city = {
+            template:`<div>haha</div>`,
+        }
+        var fgh = {
+            template:`<div>i'm fgh</div>`,
+            components:{
+                "city":city
+            }
+        }
         var app = new Vue({
             el: '#app',
             data: {
                 message: 'Hello World Vue!'
+            },
+            components:{
+                "fgh":fgh
             }
         })
     </script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <script type="text/javascript" src="/assets/js/vue.js"></script>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <hr>
+     <div id="app">
+        {{num}}
+        <p><button @click="add">增加</button></p>
+    </div>
+    <p><button onclick="reduce()">减少</button></p>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                num: 1
+            },
+            methods: {
+                add:function(){
+                    this.num ++
+                }
+            },
+        })
+        app.$on("reduce",function(){
+            this.num--
+        })
+        function reduce(){
+            app.$emit("reduce")
+        }
+    </script>
+</body>
+</html>

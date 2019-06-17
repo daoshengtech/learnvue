@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <script type="text/javascript" src="/assets/js/vue.js"></script>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <hr>
+     <div id="app">
+        {{num}}
+        <br>
+        <button @click="add">add</button>
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                num: 0
+            },
+            methods: {
+                add:function(){
+                    this.num++
+                }
+            },
+            beforeCreate() {
+                console.log("beforeCreate,初始化之前")
+            },
+            created() {
+                console.log("created,创建完成")
+            },
+            beforeMount() {
+                console.log("beforMount,挂载之前")
+            },
+            mounted() {
+                console.log("mounted，被挂在之后")
+            },
+            beforeUpdate() {
+                console.log("beforUpdate,数据更新前")
+            },
+            updated() {
+                console.log("updated,更新之后")   
+            },
+            activated() {
+                console.log("")
+            },
+            deactivated() {
+                
+            },
+            beforeDestroy() {
+                console.log("beforeDestroy 销毁之前")
+            },
+            destroyed() {
+                console.log("destroyed 销毁之后")
+            },
+        })
+    </script>
+</body>
+</html>

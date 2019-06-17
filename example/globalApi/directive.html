@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <script type="text/javascript" src="/assets/js/vue.js"></script>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <hr>
+     <div id="app">
+        <div v-fgh="color">{{num}}</div>
+        <p>
+            <button @click="add">add</button>
+        </p>
+    </div>
+
+    <script type="text/javascript">
+        Vue.directive("fgh",{
+            bind:function(el,binding){
+            //第一次绑定时
+                el.style.color = binding.value
+            },
+            inserted:function(){
+                //绑定到节点
+            },
+            update:function(){
+                //组件更新时
+            },
+            componentUpdated:function(){
+                //组件更新后
+            },
+            unbind:function(){
+                //解绑时
+            }
+        })
+        var app = new Vue({
+            el: '#app',
+            data: {
+                num:10,
+                color:"red",
+            },
+            methods: {
+                add:function(){
+                    this.num++;
+                }
+            },
+        })
+    </script>
+</body>
+</html>
