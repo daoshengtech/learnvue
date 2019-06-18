@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+    <div id="id">
+        <img v-bind:src="imgSrc" width="200"/>
+        <a :href="url" target="_blank">a</a>
+        <div :class="className">1,绑定Class</div>
+        <div :class="{classA:isOk}">1,绑定Class中的判断</div>
+        <div :class="[className,className2]">1,绑定Class中的数组</div>
+        <div :class="isOk?className:className2">1,绑定Class中的三元运算</div>
+        <div>
+            <input type="checkbox" v-model="isOk">
+            <label for="isOk">isOk={{isOk}}</label>
+        </div>
+        <div :style="{color:red,fontSize:font}">style</div>
+        <div :style="style">style</div>
+    </div>
+    <style>
+        .classA{
+            color:red;
+        }
+        .classB{
+            
+            font-size: 25px;
+        }
+    </style>
+    <script type="text/javascript">
+        var vue = new Vue({
+            el:"#id",
+            data:{
+                imgSrc:"../assets/css/1.jpg",
+                url:"https://www.bilibili.com/video/av48858873/?p=7",
+                className:"classA",
+                className2:"classB",
+                isOk:true,
+                red:"red",
+                font:"35px",
+                style:{
+                    color:"red",
+                    fontSize:"50px"
+                }
+            }
+        })
+    </script>
+</body>
+</html>

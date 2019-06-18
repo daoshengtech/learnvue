@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+    <div id="id">
+        本场比赛得分为：{{Num}}
+        <p><button v-on:click="NumUp">+</button></p>
+        <p><button v-on:click="NumDown">-</button></p>
+        <input type="text" v-on:keyup.enter="onEnter" v-model="Num2">
+    </div>
+    <script type="text/javascript">
+        var vue = new Vue({
+            el:"#id",
+            data:{
+                Num:0,
+                Num2:1
+            },
+            methods:{
+                NumUp:function(){
+                    this.Num++;
+                },
+                NumDown:function(){
+                    this.Num--;
+                },
+                onEnter:function(){
+                    this.Num = this.Num+parseInt(this.Num2);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

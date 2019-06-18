@@ -4,20 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>helloWorld</title>
+    <title>Document</title>
     <script type="text/javascript" src="../assets/js/vue.js"></script>
 </head>
 <body>
-    <h1>helloWorld</h1>
-    <hr>
     <div id="id">
-        {{message}}
+        <div v-pre><!--作用为反编译 -->
+            {{message}}
+        </div>
+        <div v-cloak><!-- 作用为渲染完成才显示 -->
+            渲染完成才显示
+        </div>
+        <!-- 只进行一次渲染 -->
+        <div v-once>{{message}}</div>
+        <input type="text" v-model="message">
+        <div>{{message}}</div>
     </div>
     <script type="text/javascript">
         var vue = new Vue({
-            el:'#id',
+            el:"#id",
             data:{
-                message:'HelloWorld111222333'
+                message:"welcome"
             }
         })
     </script>

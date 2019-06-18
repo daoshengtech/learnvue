@@ -4,20 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>helloWorld</title>
+    <title>Document</title>
     <script type="text/javascript" src="../assets/js/vue.js"></script>
 </head>
 <body>
-    <h1>helloWorld</h1>
+    <h1>biaoti</h1>
     <hr>
     <div id="id">
-        {{message}}
+        <div v-if="message">
+            真
+        </div>
+        <div v-else="message">
+            假
+        </div>
+        <div v-show="mess">
+            show
+        </div>
     </div>
     <script type="text/javascript">
         var vue = new Vue({
-            el:'#id',
+            el:"#id",
             data:{
-                message:'HelloWorld111222333'
+                message:false,
+                mess:true
             }
         })
     </script>

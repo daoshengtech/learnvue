@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>helloWorld</title>
+    <title>Document</title>
     <script type="text/javascript" src="../assets/js/vue.js"></script>
 </head>
 <body>
-    <h1>helloWorld</h1>
-    <hr>
     <div id="id">
-        {{message}}
+        <span v-text="message"></span>
+        <hr>
+        <span v-html="mes"></span>
     </div>
     <script type="text/javascript">
         var vue = new Vue({
-            el:'#id',
+            el:"#id",
             data:{
-                message:'HelloWorld111222333'
+                message:"welcome",
+                mes:"<h1> welcome </h1>"
             }
         })
     </script>
