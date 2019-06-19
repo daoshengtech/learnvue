@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slot content extend</title>
+</head>
+<body>
+<h1>Slot content extend</h1>
+<hr>
+<div id="app">
+    <vv>
+        <span slot="blogUrl">{{vvData.blogUrl}}</span>
+        <span slot="netName">{{vvData.netName}}</span>
+        <span slot="skill">{{vvData.skill}}</span>
+    </vv>
+</div>
+
+<template id="tmp">
+    <div>
+        <p>博客地址：<slot name="blogUrl"></slot></p>
+        <p>网名：<slot name="netName"></slot></p>
+        <p>技术类型：<slot name="skill"></slot></p>
+    </div>
+</template>
+
+<script type="text/javascript" src="../assets/js/vue.js"></script>
+<script type="text/javascript" src="../assets/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    var vv={
+        template:'#tmp'
+    }
+
+    var app=new Vue({
+        el:'#app',
+        data:{
+            vvData:{
+                blogUrl:'http://www.baidu.com',
+                netName:'baidu',
+                skill:'搜索引擎'
+            }
+        },
+        components:{
+            'vv':vv
+        }
+    })
+</script>
+</body>
+</html>
