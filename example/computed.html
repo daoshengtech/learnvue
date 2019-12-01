@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>computed option</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+<h1>computed option</h1>
+<hr>
+<div id="app">
+    <p>{{newPrice}}</p>
+    <ul>
+        <li v-for="item in reversNews">{{item.title}}-{{item.data}}</li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    var newsList=[
+        {title:'国务院港澳办就香港选举表态',data:'2017/3/24'},
+        {title:'习近平结束对朝鲜国事访问启程回国',data:'2017/3/25'},
+        {title:'习近平出席金正恩举行的欢迎宴会 观看演出',data:'2017/3/25'},
+        {title:'学深改实见成效 追寻，踏着红色的足迹',data:'2017/3/26'},
+    ]
+    var app=new Vue({
+        el:'#app',
+        data:{
+          price:100,
+            newsList:newsList
+        },
+        computed:{
+            newPrice:function(){
+                return this.price='￥'+ this.price+'元';
+            },
+            reversNews:function(){
+                return this.newsList.reverse();
+            }
+        }
+    } )
+</script>
+</body>
+</html>
