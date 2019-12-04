@@ -1,14 +1,7 @@
 {
-  "name": "learnvue",
+  "name": "example",
   "version": "1.0.0",
-  "description": "Daoshengtech demo",
-  "main": "index.js",
-  "directories": {
-    "example": "example"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Daoshengtech",
-  "license": "ISC"
+  "dependencies": {
+    
+  }
 }
